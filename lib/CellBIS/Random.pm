@@ -2,6 +2,8 @@ package CellBIS::Random;
 use strict;
 use warnings;
 use 5.010;
+use utf8;
+use feature ();
 
 use Carp ();
 use Scalar::Util qw(blessed weaken);
