@@ -48,7 +48,7 @@ Without `set_string` :
 my $result_random = $rand->random('my string here', 2, 3);
 print "Random Result : $result_random \n";
 ```
-=head2 unrandom
+## unrandom
 
 With `set_string` :
 ```perl
