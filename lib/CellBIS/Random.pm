@@ -406,7 +406,20 @@ will be converted to an array to get an odd/even number of key array.
 
 =head1 METHODS
 
-There is four methods C<set_string>, C<get_result>, C<random> and C<unrandom> :
+There is four methods C<set_string>, C<get_result>, C<random> and C<unrandom>.
+
+Specifically for C<random> and C<unrandom> methods, you can use two or three arguments.
+If using Object Oriented, you can use 2 arguments. But if using Procedural, you can use 3 arguments.
+  
+  # Object Oriented
+  # Arguments : <number_of_random_odd>, <number_of_random_even>
+  $rand->random(2, 3);
+  $rand->unrandom(2, 3);
+  
+  # Procedural
+  # Arguemnts : <your_string_to_random>, <number_of_random_odd>, <number_of_random_even>
+  CellBIS::Random->random('your string to random', 2, 3);
+  CellBIS::Random->unrandom('result of random to extract', 2, 3);
 
 =head2 set_string
 
@@ -417,6 +430,7 @@ Method to set up string for Random action.
 Method to get result of Random Action.
 
 =head2 random
+
 
 With C<set_string> :
 
@@ -444,6 +458,9 @@ Without C<set_string> :
   
   my $result_unrandom = $rand->unrandom($rand->{result}, 2, 3);
   print "Extract Random Result : $result_unrandom \n";
+  
+
+There are three or four arguments which to use in method C<random> and C<unrandom>
 
 =head1 AUTHOR
 
