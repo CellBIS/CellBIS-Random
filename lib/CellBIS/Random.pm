@@ -39,8 +39,8 @@ sub random {
   my $count_odd = 0;
   my $count_even = 0;
   my $nested = 0;
-  Carp::croak(q{Arguments is less than 3 or 4})
-    unless $arg_len == 3 or $arg_len >= 4;
+  Carp::croak(q{Arguments is less than 2 or 3})
+    unless $arg_len == 2 or $arg_len >= 3;
   
   if (blessed($self)) {
     $string = $self->{string};
@@ -124,8 +124,8 @@ sub unrandom {
   my $count_odd = 0;
   my $count_even = 0;
   my $nested = 0;
-  Carp::croak(q{Arguments is less than 3 or 4})
-    unless $arg_len == 3 or $arg_len >= 4;
+  Carp::croak(q{Arguments is less than 2 or 2})
+    unless $arg_len == 2 or $arg_len >= 3;
   
   if (blessed($self)) {
     $string = $self->{string};
