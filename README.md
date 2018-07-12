@@ -119,7 +119,7 @@ print "Extract Random Result : $extract_random \n";
   
 Case 2
 
-```
+```perl
 use CellBIS::Random;
 
 my $rand = CellBIS::Random->new();
