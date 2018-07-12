@@ -428,7 +428,7 @@ With C<set_string> :
   
 Without C<set_string> :
   
-  my $result_random = $rand->random($string, 2, 3);
+  my $result_random = $rand->random('your string here', 2, 3);
   print "Random Result : $result_random \n";
 
 =head2 unrandom
