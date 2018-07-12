@@ -1,3 +1,6 @@
 Revision history for perl distribution CellBIS-Random
 
 {{$NEXT}}
+
+0.1       2018-07-12 23:23:29+08:00 Asia/Makassar
+          Random and Unrandom characters in string.
