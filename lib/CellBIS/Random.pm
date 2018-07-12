@@ -7,7 +7,7 @@ use Carp ();
 use Scalar::Util qw(blessed weaken);
 use List::SomeUtils qw(part);
 
-# ABSTRACT: Tool for Random Character from String
+# ABSTRACT: Tool for Randomize characters in strings.
 our $VERSION = '0.1';
 
 # Constructor :
