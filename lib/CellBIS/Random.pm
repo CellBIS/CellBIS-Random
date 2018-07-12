@@ -196,6 +196,7 @@ sub unrandom {
       $result = $self->reverse_loop_union_for_odd_even($count_even, $string, 'even_odd');
     }
   }
+  $self->{'result'} = $result;
   return $result;
 }
 
@@ -390,12 +391,15 @@ CellBIS::Random - Tool for Randomize characters in strings.
 
   use CellBIS::Random;
   
+  my $rand = CellBIS::Random->new();
+  
   my $string = 'my_string_test_random';
-  my $rand = CellBIS::Random->new($string);
-  my $random = $rand->random(2, 3);
   $rand->set_string($random);
-  my $unrandom = $rand->unrandom(2, 3);
+  
+  my $random = $rand->random(2, 3);
   print 'Random : ', $random, "\r"; #-> ynsn_dtgso__tmrtrmaei
+  
+  my $unrandom = $rand->unrandom(2, 3);
   print 'Unrandom : ', $unrandom, "\r"; #-> my_string_test_random
 
 =head1 DESCRIPTION
@@ -427,14 +431,15 @@ Method to set up string for Random action.
 
 =head2 get_result
 
-Method to get result of Random Action.
+Method to get result of random character and Extract result of random.
 
 =head2 random
 
-
 With C<set_string> :
 
-  my $string = 'your string here';
+  use CellBIS::Random;
+  
+  my $string = 'my string here';
   $rand->set_string($string);
   
   my $result_random = $rand->random(2, 3);
@@ -442,7 +447,7 @@ With C<set_string> :
   
 Without C<set_string> :
   
-  my $result_random = $rand->random('your string here', 2, 3);
+  my $result_random = $rand->random('my string here', 2, 3);
   print "Random Result : $result_random \n";
 
 =head2 unrandom
@@ -459,9 +464,77 @@ Without C<set_string> :
   my $result_unrandom = $rand->unrandom($rand->{result}, 2, 3);
   print "Extract Random Result : $result_unrandom \n";
   
+=head1 EXAMPLES
 
-There are three or four arguments which to use in method C<random> and C<unrandom>
+Example to using Procedural and Object Oriented
 
+=head2 Procedural
+
+Case 1
+
+  use CellBIS::Random;
+  
+  my $result_random = CellBIS::Random->random('my string here', 2, 3);
+  print "Random Result : $result_random \n";
+  
+  my $extract_random = CellBIS::Random->unrandom($result_random, 2, 3);
+  print "Extract Random Result : $extract_random \n";
+  
+Case 2
+
+  use CellBIS::Random;
+  
+  my $rand = CellBIS::Random->new();
+  my $result_random = $rand->random('my string here', 2, 3);
+  print "Random Result : $result_random \n";
+  
+  my $extract_random = $rand->unrandom($result_random, 2, 3);
+  print "Extract Random Result : $extract_random \n";
+  
+=head2 Object Oriented
+
+Case 1
+
+  use CellBIS::Random;
+  
+  my $rand = CellBIS::Random->new();
+  
+  # For Random
+  $rand->set_string('my string here');
+  $rand->random(2, 3);
+  my $result_random = $rand->get_result();
+  
+  print "Random Result : $result_random \n";
+  
+  =====================================================
+  
+  # For Extract Random
+  $rand->set_string($result_random);
+  $rand->unrandom(2, 3);
+  my $extract_random = $rand->get_result();
+  
+  print "Extract Random Result : $extract_random \n";
+  
+Case 2
+
+  use CellBIS::Random;
+  
+  my $rand = CellBIS::Random->new();
+  
+  # For Random
+  $rand->set_string('my string here');
+  my $result_random = $rand->random('my string here', 2, 3);
+  
+  print "Random Result : $result_random \n";
+  
+  =====================================================
+  
+  # For Extract Random
+  my $extract_random = $rand->unrandom($result_random, 2, 3);
+  
+  print "Extract Random Result : $extract_random \n";
+  
+  
 =head1 AUTHOR
 
 Achmad Yusri Afandi, E<lt>yusrideb@cpan.orgE<gt>
