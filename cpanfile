@@ -1,6 +1,5 @@
 requires "Carp" => "0";
 requires "List::SomeUtils" => "0";
-requires "Mojolicious" => "0";
 requires "Scalar::Util" => "0";
 requires "feature" => "0";
 requires "strict" => "0";
