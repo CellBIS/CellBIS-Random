@@ -1,9 +1,8 @@
 package CellBIS::Random;
 use strict;
 use warnings;
-use 5.010;
 use utf8;
-use feature ();
+use feature ":5.10";
 
 use Carp ();
 use Scalar::Util qw(blessed weaken);
@@ -18,7 +17,7 @@ sub new {
   my $class = shift;
   my $self = {
     string => shift,
-    result => 'null',
+    result => 'null'
   };
   bless $self, $class;
   return $self;
