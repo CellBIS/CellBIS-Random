@@ -401,7 +401,7 @@ CellBIS::Random - Tool for Random character from String.
 =head1 DESCRIPTION
 
 The purpose of this module is to randomize characters in strings.
-Before a random or non-random character (extract from random), the string
+Before a random or unrandom character (extract from random), the string
 will be converted to an array to get an odd/even number of key array.
 
 =head1 METHODS
