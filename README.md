@@ -1,2 +1,2 @@
 # CellBIS::Random
-Tools for random character from string
+Tool for Randomize characters in strings.

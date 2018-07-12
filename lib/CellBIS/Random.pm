@@ -384,7 +384,7 @@ sub _split_blen {
 
 =head1 NAME
 
-CellBIS::Random - Tool for Random character from String.
+CellBIS::Random - Tool for Randomize characters in strings.
 
 =head1 SYNOPSIS
 
