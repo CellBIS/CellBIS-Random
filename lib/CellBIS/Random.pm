@@ -48,6 +48,7 @@ sub random {
     ($count_odd, $count_even, $nested) = @_ if ($arg_len >= 3);
     ($string, $count_odd, $count_even, $nested) = @_ if ($arg_len >= 4);
   } else {
+    ($string, $count_odd, $count_even) = @_ if ($arg_len >= 3);
     ($string, $count_odd, $count_even, $nested) = @_ if ($arg_len >= 4);
   }
   
@@ -112,7 +113,7 @@ sub random {
       $result = $self->loop_union_for_odd_even($count_even, $result, 'even_odd');
     }
   }
-  $self->{'result'} = $result;
+  $self->{'result'} = $result if blessed($self);
   return $result;
 }
 
@@ -132,6 +133,7 @@ sub unrandom {
     ($count_odd, $count_even, $nested) = @_ if ($arg_len >= 3);
     ($string, $count_odd, $count_even, $nested) = @_ if ($arg_len >= 4);
   } else {
+    ($string, $count_odd, $count_even) = @_ if ($arg_len >= 3);
     ($string, $count_odd, $count_even, $nested) = @_ if ($arg_len >= 4);
   }
   
@@ -196,7 +198,7 @@ sub unrandom {
       $result = $self->reverse_loop_union_for_odd_even($count_even, $string, 'even_odd');
     }
   }
-  $self->{'result'} = $result;
+  $self->{'result'} = $result if blessed($self);
   return $result;
 }
 
@@ -345,13 +347,13 @@ sub _odd_even_char {
   my @pre_data1 = ();
   my @data = ();
   if ($type eq 'odd') {
-    @result = grep {$_ % 2 == 1} keys @arr_str;
-    @pre_data1 = map {$pre_data[$_] => $arr_str[$result[$_]]} keys @result;
+    @result = grep {$_ % 2 == 1} 0 .. $#arr_str;
+    @pre_data1 = map {$pre_data[$_] => $arr_str[$result[$_]]} 0 .. $#result;
     @data = grep (defined, @pre_data1);
   }
   if ($type eq 'even') {
-    @result = grep {$_ % 2 == 0} keys @arr_str;
-    @pre_data1 = map {$pre_data[$_] => $arr_str[$result[$_]]} keys @result;
+    @result = grep {$_ % 2 == 0} 0 .. $#arr_str;
+    @pre_data1 = map {$pre_data[$_] => $arr_str[$result[$_]]} 0 .. $#result;
     @data = grep (defined, @pre_data1);
   }
   $data = join '', @data;
