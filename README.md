@@ -4,6 +4,23 @@ The purpose of this module is to randomize characters in strings.
 Before a random or unrandom character (extract from random), the string
 will be converted to an array to get an odd/even number of key array.
 
+## How to Install :
+From Source :
+```bash
+git clone -b v0.1 git@github.com:CellBIS/CellBIS-Random.git
+perl Makefile.PL
+make && make test
+make install && make clean
+```
+with `cpan` command :
+```bash
+cpan -i CellBIS::Random
+```
+with `cpanm` command :
+```bash
+cpanm CellBIS::Random
+```
+
 # METHODS
 
 There is four methods `set_string`, `get_result`, `random` and `unrandom`.
