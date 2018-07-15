@@ -50,7 +50,7 @@ Method to get result of random character and Extract result of random.
 
 ## random
 
-With set_string :
+With `set_string` :
 ```perl
 use CellBIS::Random;
 
