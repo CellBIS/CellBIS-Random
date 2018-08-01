@@ -8,7 +8,7 @@ use Scalar::Util qw(blessed weaken);
 use List::SomeUtils qw(part);
 
 # ABSTRACT: Tool for Randomize characters in strings.
-our $VERSION = '0.2';
+our $VERSION = '0.3';
 
 # Constructor :
 # ------------------------------------------------------------------------
