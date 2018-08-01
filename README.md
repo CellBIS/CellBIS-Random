@@ -154,6 +154,26 @@ my $extract_random = $rand->unrandom($result_random, 2, 3);
 
 print "Extract Random Result : $extract_random \n";
 ```
+  
+Case 3
+```perl
+use CellBIS::Random;
+
+my $rand = CellBIS::Random->new();
+
+# For Random
+my $result_random = $rand->random('my string here', 2, 3);
+
+print "Random Result : $result_random \n";
+
+=====================================================
+
+# For Extract Random
+my $extract_random = $rand->unrandom($result_random, 2, 3);
+
+print "Extract Random Result : $extract_random \n";
+```
+  
 # AUTHOR
 
 Achmad Yusri Afandi, <yusrideb@cpan.org>
