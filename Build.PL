@@ -11,7 +11,6 @@ my %module_build_args = (
     "Module::Build" => "0.28"
   },
   "configure_requires" => {
-    "ExtUtils::MakeMaker" => 0,
     "Module::Build" => "0.28"
   },
   "dist_abstract" => "Tool for Randomize characters in strings.",
@@ -19,16 +18,15 @@ my %module_build_args = (
     "Achmad Yusri Afandi <yusrideb\@cpan.org>"
   ],
   "dist_name" => "CellBIS-Random",
-  "dist_version" => "0.1",
+  "dist_version" => "0.3",
   "license" => "artistic_2",
   "module_name" => "CellBIS::Random",
   "recursive_test_files" => 1,
   "requires" => {
     "Carp" => 0,
     "List::SomeUtils" => 0,
-    "Mojolicious" => 0,
     "Scalar::Util" => 0,
-    "feature" => 0,
+    "perl" => "5.010",
     "strict" => 0,
     "utf8" => 0,
     "warnings" => 0
